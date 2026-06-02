@@ -14,62 +14,45 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- MODERN STYLING (Neon Mor/Lacivert/Beyaz) ---
+# --- MODERN STYLING (Tema Çakışmasını Önleyen Temiz Tasarım) ---
 st.markdown("""
 <style>
-    /* Ana arkaplan rengi - Koyu Lacivert */
-    .stApp {
-        background-color: #050511;
-        color: #ffffff;
-    }
-    
-    /* Neon Başlıklar */
-    h1, h2, h3 {
-        color: #ffffff !important;
-        text-shadow: 0 0 10px #8a2be2, 0 0 20px #4169e1 !important;
-    }
-    
-    /* Yan Menü (Sidebar) Koyu Lacivert ve Mor Neon Çizgi */
-    [data-testid="stSidebar"] {
-        background-color: #02020a !important;
-        border-right: 2px solid #8a2be2;
-        box-shadow: 2px 0 15px rgba(138, 43, 226, 0.4);
-    }
-    
-    /* Metric / Stat Boxları - Neon Glow */
-    [data-testid="stMetricValue"] {
-        color: #ffffff !important;
-        text-shadow: 0 0 8px #00ffff !important;
-    }
-    
-    /* Form Arkaplanı ve Çerçevesi */
+    /* Şeffaf Form Kutusu - Streamlit Light/Dark ile %100 uyumlu */
     [data-testid="stForm"] {
-        background: linear-gradient(145deg, #0b0f1c, #070914);
-        border: 1px solid #4169e1;
-        border-radius: 15px;
-        box-shadow: 0 0 15px rgba(65, 105, 225, 0.5), inset 0 0 10px rgba(138, 43, 226, 0.2);
-        padding: 2rem;
+        background-color: transparent !important;
+        border: 2px solid rgba(138, 43, 226, 0.4) !important;
+        border-radius: 15px !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+        padding: 2rem !important;
     }
     
-    /* Tahmin Et Butonu Neon Tasarımı */
+    [data-testid="stSidebar"] {
+        border-right: 1px solid rgba(138, 43, 226, 0.3) !important;
+    }
+    
+    /* İkon/Metin Okunurluğu İçin Yumuşatmalar */
+    [data-testid="stMetricValue"] {
+        text-shadow: none !important;
+    }
+    h1, h2, h3 {
+        text-shadow: none !important;
+    }
+    
+    /* Neon Buton Tasarımı */
     [data-testid="stFormSubmitButton"] button {
-        background: linear-gradient(90deg, #4169e1, #8a2be2);
-        border: none;
-        color: white;
-        font-weight: bold;
-        border-radius: 30px;
-        padding: 0.5rem 2rem;
-        box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
-        transition: all 0.3s ease;
-    }
-    [data-testid="stFormSubmitButton"] button:hover {
-        box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
-        transform: scale(1.05);
+        background: linear-gradient(90deg, #4169e1, #8a2be2) !important;
+        border: none !important;
+        color: white !important;
+        font-weight: bold !important;
+        border-radius: 30px !important;
+        padding: 0.5rem 2rem !important;
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4) !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
     }
     
-    /* Input alanlarının yazıları */
-    input, div[data-baseweb="select"] {
-        color: white !important;
+    [data-testid="stFormSubmitButton"] button:hover {
+        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6) !important;
+        transform: translateY(-2px) !important;
     }
 </style>
 """, unsafe_allow_html=True)
